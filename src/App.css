@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  padding: 20px
 }
 
 .App-logo {
@@ -8,6 +8,7 @@
 }
 
 .App-header {
+  text-align: center;
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -16,6 +17,20 @@
 
 .App-intro {
   font-size: large;
+}
+
+.Session-favorite {
+  height: 30px;
+  width: 30px;
+}
+
+.Session-details {
+  display: flex;
+  border-bottom: 2px solid #888;
+}
+
+.Session-details div {
+  padding: 10px;
 }
 
 @keyframes App-logo-spin {

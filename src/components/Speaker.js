@@ -7,7 +7,8 @@ class Speaker extends Component {
     return(
       <div className="speaker">
         <div><img alt={FirstName} src={GravatarUrl}/></div>
-        <h2>{FirstName} {LastName}</h2>
+
+        <h9>{FirstName}&nbsp;{LastName}</h9>
       </div>
     )
   }
