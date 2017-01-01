@@ -12,7 +12,9 @@ class App extends Component {
           <h2>CodeMash Schedule</h2>
         </div>
 
-        <Session title="React Everywhere"/>
+        <Session
+      title="React Everywhere"
+      description="Traction android venture business-to-consumer iteration rockstar non-disclosure agreement client.Accelerator value proposition entrepreneur churn rate low hanging fruit iteration supply chain first mover advantage rockstar. Gamification network effects long tail gen-z incubator facebook mass market. First mover advantage partner network holy grail. Responsive web design mass market crowdsource. Social media investor customer long tail channels partner network iPad business-to-business."/>
       </div>
     );
   }
