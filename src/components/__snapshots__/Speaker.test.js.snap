@@ -1,0 +1,31 @@
+exports[`test renders without crashing 1`] = `
+<div
+  className="session"
+  onClick={[Function]}>
+  <h2>
+    7 Languages in 7 Hours
+  </h2>
+  <div
+    className="Session-details">
+    <div>
+      <div
+        className="speaker">
+        <div>
+          <img
+            alt="Amber"
+            src="//www.gravatar.com/avatar/7c2a83b93fe0e5f2ed4c95c59367259c" />
+        </div>
+        <h9>
+          Amber
+           
+          Conville
+        </h9>
+      </div>
+    </div>
+    <div
+      className="Session-abstract">
+      Great Session
+    </div>
+  </div>
+</div>
+`;
