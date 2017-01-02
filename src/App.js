@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Session from './components/Session'
+import SessionList from './components/SessionList'
 import Loading from './components/Loading'
 import './App.css';
+
+import store from './store'
+import { Provider } from 'react-redux'
+
 const SESSIONS_URL = 'https://speakers.codemash.org/api/sessionsdata'
 
 
@@ -25,16 +29,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>CodeMash Schedule</h2>
-        </div>
+      <Provider store={store}>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>CodeMash Schedule</h2>
+          </div>
 
-        <Loading loading={this.state.loading}>
-          { this.state.sessions.map(session => <Session {...session} />) }
-        </Loading>
-      </div>
+          <Loading loading={this.state.loading}>
+            <SessionList sessions={this.state.sessions}/>
+          </Loading>
+        </div>
+      </Provider>
     );
   }
 }
