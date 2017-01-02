@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Session from './components/Session'
+import Loading from './components/Loading'
 import './App.css';
 const SESSIONS_URL = 'https://speakers.codemash.org/api/sessionsdata'
 
@@ -22,12 +23,6 @@ class App extends Component {
     })
   }
 
-  renderSessions() {
-    return <h1>Loading...</h1>;
-
-    return this.state.sessions.map(session => <Session {...session} />)
-  }
-
   render() {
     return (
       <div className="App">
@@ -36,7 +31,9 @@ class App extends Component {
           <h2>CodeMash Schedule</h2>
         </div>
 
-        {this.renderSessions()}
+        <Loading loading={this.state.loading}>
+          { this.state.sessions.map(session => <Session {...session} />) }
+        </Loading>
       </div>
     );
   }
