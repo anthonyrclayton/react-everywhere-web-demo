@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const Speaker = ({ FirstName, LastName, GravatarUrl }) => (
   <div className="speaker">
