@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import Session from './components/Session'
 import './App.css';
 
-const session = {
+const sessions = [{
     "Id": 5445,
     "SessionTime": "0001-01-01T00:00:00",
     "SessionStartTime": "2017-01-10T08:00:00",
@@ -30,7 +30,7 @@ const session = {
         "GravatarUrl": "//www.gravatar.com/avatar/7c2a83b93fe0e5f2ed4c95c59367259c"
       }
     ]
-}
+}]
 
 class App extends Component {
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
           <h2>CodeMash Schedule</h2>
         </div>
 
-        <Session {...session} />
+        { sessions.each.map(session => <Session {...session} />) }
       </div>
     );
   }
