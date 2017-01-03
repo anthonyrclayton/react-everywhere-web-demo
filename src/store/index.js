@@ -34,7 +34,8 @@ export const applyFilter = (filter) => {
 
 const INITIAL_STATE = {
   loading: true,
-  sessions: {}
+  sessions: {},
+  filters: ['Kidz Mash']
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
