@@ -1,11 +1,13 @@
 import { createStore } from 'redux';
+import R from 'ramda'
 
 const UPDATE_SESSIONS = 'UPDATE_SESSIONS'
 
+const byStartTime = R.groupBy((session) => {
+  return session.SessionStartTime.toString()
+})
+
 export const updateSessions = (sessions) => {
-  console.log('---------------------')
-  console.log('sessions', sessions)
-  console.log('---------------------')
   return {
     type: UPDATE_SESSIONS,
     sessions
@@ -14,7 +16,7 @@ export const updateSessions = (sessions) => {
 
 const INITIAL_STATE = {
   loading: true,
-  sessions: []
+  sessions: {}
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
@@ -25,7 +27,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        sessions: action.sessions
+        sessions: byStartTime(action.sessions)
       }
 
     default: return state
