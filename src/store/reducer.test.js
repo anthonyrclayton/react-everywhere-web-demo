@@ -1,4 +1,4 @@
-import { reducer, updateSessions } from './index'
+import { reducer, updateSessions, applyFilters } from './index'
 import sessions from '../fixtures/sessions'
 
 const INITIAL_STATE = {
