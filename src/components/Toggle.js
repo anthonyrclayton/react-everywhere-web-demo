@@ -26,7 +26,7 @@ class Toggle extends Component {
 
 Toggle.propTypes = {
   on: React.PropTypes.bool,
-  onClick: React.PropTypes.func.isRequired,
+  onToggle: React.PropTypes.func.isRequired,
   text: React.PropTypes.string.isRequired
 }
 export default Toggle
