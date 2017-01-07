@@ -3,6 +3,7 @@ import R from 'ramda'
 
 const UPDATE_SESSIONS = 'UPDATE_SESSIONS'
 const UPDATE_FILTERS = 'UPDATE_FILTERS'
+const SEARCH_SESSIONS = 'SEARCH_SESSIONS'
 let sessionsData = []
 
 const byStartTime = R.groupBy((session) => {
@@ -13,6 +14,13 @@ export const updateSessions = (sessions) => {
   return {
     type: UPDATE_SESSIONS,
     sessions
+  }
+}
+
+export const searchSessions = (searchTerm) => {
+  return  {
+    type: SEARCH_SESSIONS,
+    searchTerm
   }
 }
 
@@ -32,6 +40,12 @@ export const applyFilter = (filter) => {
   return { type: 'UPDATE_FILTERS', filter }
 }
 
+const searchFor = (searchTerm) => {
+  return R.filter((s) => {
+    return s.Title.includes(searchTerm)
+  })
+}
+
 const INITIAL_STATE = {
   loading: true,
   sessions: {},
@@ -39,9 +53,12 @@ const INITIAL_STATE = {
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
-  console.log('got action --------->', action)
-
   switch(action.type) {
+    case SEARCH_SESSIONS:
+      return {
+        ...state,
+        sessions: byStartTime(searchFor(action.searchTerm)(sessionsData))
+      }
     case UPDATE_FILTERS:
       let filters = toggleFilter(action.filter, state.filters)
 

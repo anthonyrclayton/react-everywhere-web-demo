@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Session from './Session'
 import Loading from './Loading'
 import Toggle from './Toggle'
+import Search from './Search'
 import moment from 'moment'
 import R from 'ramda'
 import { applyFilter } from '../store/index'
@@ -42,6 +43,7 @@ class SessionList extends Component {
           <Toggle text="Sponsor Session" onToggle={this.toggleFilter.bind(this, "Sponsor Session")} />
           <Toggle text="After Dark" onToggle={this.toggleFilter.bind(this, "After Dark")} />
         </div>
+        <Search />
 
         <div>
           { keys.map((k) => <TimeSlot key={k} time={k} sessions={sessions[k]}/>) }
