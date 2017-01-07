@@ -35,7 +35,7 @@ class SessionList extends Component {
     const keys = R.keys(sessions);
 
     return(
-      <Loading loading={this.props.loading}>
+      <div>
         <div className="toggles">
           <Toggle text="Pre-Compiler" onToggle={this.toggleFilter.bind(this, "Pre-Compiler")} />
           <Toggle text="General Session" onToggle={this.toggleFilter.bind(this, "General Session")} />
@@ -43,12 +43,16 @@ class SessionList extends Component {
           <Toggle text="Sponsor Session" onToggle={this.toggleFilter.bind(this, "Sponsor Session")} />
           <Toggle text="After Dark" onToggle={this.toggleFilter.bind(this, "After Dark")} />
         </div>
+
         <Search />
 
-        <div>
-          { keys.map((k) => <TimeSlot key={k} time={k} sessions={sessions[k]}/>) }
-        </div>
-      </Loading>
+        <Loading loading={this.props.loading}>
+
+          <div>
+            { keys.map((k) => <TimeSlot key={k} time={k} sessions={sessions[k]}/>) }
+          </div>
+        </Loading>
+      </div>
     )
   }
 }

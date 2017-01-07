@@ -8,12 +8,19 @@ class Search extends React.Component {
     this.props.search(this.refs.search.value)
   }
 
+  clear(e) {
+    e.preventDefault()
+    this.refs.search.value = ""
+    this.search(e)
+  }
+
   render() {
     return(
-      <div className="speaker">
+      <div className="search-wrapper">
         <form>
           <input ref="search" type="text" />
           <button onClick={this.search.bind(this)}>Search</button>
+          <button onClick={this.clear.bind(this)}>Cancel</button>
         </form>
       </div>
     )
