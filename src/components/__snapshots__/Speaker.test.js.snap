@@ -16,9 +16,13 @@ exports[`test renders without crashing 1`] = `
             src="//www.gravatar.com/avatar/7c2a83b93fe0e5f2ed4c95c59367259c" />
         </div>
         <h9>
-          Amber
-           
-          Conville
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            Amber
+             
+            Conville
+          </a>
         </h9>
       </div>
     </div>
