@@ -52,7 +52,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
       }
 
     case(UPDATE_SESSIONS):
-      sessionsData  = action.sessions
+      sessionsData = action.sessions
+
       return {
         ...state,
         loading: false,

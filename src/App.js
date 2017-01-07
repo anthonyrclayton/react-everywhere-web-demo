@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import SessionList from './components/SessionList'
-import './App.css';
-
 import store, { updateSessions } from './store'
 import { Provider } from 'react-redux'
+import './App.css';
 
 const SESSIONS_URL = 'https://speakers.codemash.org/api/sessionsdata'
 
@@ -27,7 +25,7 @@ class App extends Component {
             <h2>CodeMash Schedule</h2>
           </div>
 
-          <SessionList />
+          { this.props.children }
         </div>
       </Provider>
     );
