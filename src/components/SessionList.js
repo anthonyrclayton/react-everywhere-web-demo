@@ -7,6 +7,7 @@ import moment from 'moment'
 import R from 'ramda'
 import { applyFilter } from '../store/index'
 import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
 
 class TimeSlot extends Component {
   render() {
@@ -36,6 +37,7 @@ class SessionList extends Component {
 
     return(
       <div>
+        <Helmet title="Sessions" />
         <div className="toggles">
           <Toggle text="Pre-Compiler" onToggle={this.toggleFilter.bind(this, "Pre-Compiler")} />
           <Toggle text="General Session" onToggle={this.toggleFilter.bind(this, "General Session")} />

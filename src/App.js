@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import store, { updateSessions } from './store'
 import { Provider } from 'react-redux'
+import Helmet from 'react-helmet'
 import './App.css';
 
 const SESSIONS_URL = '/sessions.json'
@@ -19,6 +20,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+         <Helmet
+           htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
+           title="CodeMash"
+           titleTemplate="CodeMash - %s" />
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
 
