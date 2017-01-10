@@ -4,7 +4,7 @@ import store, { updateSessions } from './store'
 import { Provider } from 'react-redux'
 import './App.css';
 
-const SESSIONS_URL = 'https://speakers.codemash.org/api/sessionsdata'
+const SESSIONS_URL = '/sessions.json'
 
 class App extends Component {
   constructor(props) {

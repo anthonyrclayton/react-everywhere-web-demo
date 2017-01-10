@@ -18,9 +18,9 @@ class Search extends React.Component {
     return(
       <div className="search-wrapper">
         <form>
-          <input ref="search" type="text" />
+          <input ref="search" type="text" placeholder="Search for term in Session Title..."/>
           <button onClick={this.search.bind(this)}>Search</button>
-          <button onClick={this.clear.bind(this)}>Cancel</button>
+          <button onClick={this.clear.bind(this)}>Clear</button>
         </form>
       </div>
     )

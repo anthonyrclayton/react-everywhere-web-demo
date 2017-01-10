@@ -2,6 +2,14 @@
   padding: 20px
 }
 
+.search-wrapper {
+  text-align: right;
+}
+
+.search-wrapper input {
+  width: 40%;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -24,14 +32,15 @@ ul {
 }
 
 .toggles {
-  padding: 0px 20px 0px 90px;
+  padding: 0px 20px 0px 0px;
   display: flex;
   width: 92%;
   justify-content: space-between;
 }
 
 .toggle {
-  padding: 10px;
+  padding: 5px;
+  font-size: 0.7em;
 }
 
 .toggle.on {

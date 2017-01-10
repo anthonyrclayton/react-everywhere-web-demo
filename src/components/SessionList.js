@@ -42,6 +42,7 @@ class SessionList extends Component {
           <Toggle text="Kids Mash" on={true} onToggle={this.toggleFilter.bind(this, "Kidz Mash")} />
           <Toggle text="Sponsor Session" onToggle={this.toggleFilter.bind(this, "Sponsor Session")} />
           <Toggle text="After Dark" onToggle={this.toggleFilter.bind(this, "After Dark")} />
+          <Toggle text="Hardware" onToggle={this.toggleFilter.bind(this, "CodeMash Schedule Item")} />
         </div>
 
         <Search />
